@@ -26,10 +26,10 @@ function! s:dispatch(bang, file) abort
     elseif empty(a:file) && !empty(session)
       let file = session
     elseif empty(a:file)
-      let file = getcwd() . '/Session.vim'
+      let file = getcwd() . '/.session.vim'
     elseif isdirectory(a:file)
       let file = substitute(fnamemodify(expand(a:file), ':p'), '[\/]$', '', '')
-            \ . '/Session.vim'
+            \ . '/.session.vim'
     else
       let file = fnamemodify(expand(a:file), ':p')
     endif
